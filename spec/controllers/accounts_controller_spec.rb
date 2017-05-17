@@ -28,8 +28,12 @@ RSpec.describe AccountsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Account. As you add validations to Account, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+  let(:valid_attributes) { {
+    # skip("Add a hash of attributes valid for your model")
+    "shopify_account_url" => "MyString",
+    "shopify_password" => "MyString",
+    "shopify_api_key" => "MyString",
+    "shopify_shared_secret" => "MyString" }
   }
 
   let(:invalid_attributes) {
@@ -39,10 +43,7 @@ RSpec.describe AccountsController, type: :controller do
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # AccountsController. Be sure to keep this updated too.
-  let(:valid_session) { {"shopify_account_url" => "MyString",
-     "shopify_password" => "MyString",
-     "shopify_api_key" => "MyString",
-     "shopify_shared_secret" => "MyString" } }} }
+  let(:valid_session) { {"shopify_account_url" => "MyString", "shopify_password" => "MyString", "shopify_api_key" => "MyString", "shopify_shared_secret" => "MyString" } }} }
 
   describe "GET #index" do
     it "returns a success response" do
